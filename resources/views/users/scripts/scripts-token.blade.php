@@ -10,9 +10,6 @@
                 'Content-Type': 'application/json',
             }
         }).then( response => {
-            if (!response.ok) {
-                throw new Error('Error serv or ');
-            }
             return response.json();
         }).then( res => {
             if(res.status){
@@ -23,6 +20,8 @@
                 buttonAddEl.style.display   = 'block';
                 getTokenEL.style.display    = 'none';
                 getTimeToken();
+            }else{
+                $.notify(res.message, "error");
             }
 
         }).catch( error => {
