@@ -15,7 +15,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/users/{id?}', [UsersController::class, 'index'])->name('users');
-
-Route::get('/', function () {
-    return view('index');
-});

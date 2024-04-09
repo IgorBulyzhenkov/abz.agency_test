@@ -15,9 +15,28 @@ class UsersController extends Controller
     {
         if (!is_null($id)) {
 
+            if(!is_numeric($id)){
+                return response([
+                    "success"       =>  false,
+                    "message"       => "The user with the requested id does not exist",
+                    "fails"         => [
+                        "userId"    => [
+                            "The user must be an integer."
+                        ]
+                    ]
+                ], 400);
+            }
+
             $user = User::query()
                 ->where('id', '=', $id)
                 ->first();
+
+            if(!$user){
+                return response([
+                    "success" =>  false,
+                    "message" => "User not found"
+                ], 404);
+            }
 
             $user = [
                 'id' => $user->id,
