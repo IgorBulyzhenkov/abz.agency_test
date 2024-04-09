@@ -89,13 +89,4 @@
     }else{
         users();
     }
-
-    const errorLocal = localStorage.getItem('error');
-
-    if(errorLocal){
-
-        $.notify(errorLocal, "error");
-
-        localStorage.removeItem('error');
-    }
 </script>
