@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\PositionsController;
 use App\Http\Controllers\Front\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/users/{id?}', [UsersController::class, 'index'])->name('users');
+Route::get('/',     function(){ return redirect( route('users') ); })->name('root');
+
+Route::get('/users/{id?}',  [UsersController::class, 'index'])->name('users');
+Route::get('/position',     [PositionsController::class, 'index'])->name('positions');

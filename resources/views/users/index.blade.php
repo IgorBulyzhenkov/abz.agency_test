@@ -1,12 +1,17 @@
 @extends('index')
 
 @section('content')
-    <button type="button" id="token" class="btn btn-outline-warning" style="display: none; margin-bottom: 20px">Get
-        Token
-    </button>
-    <button type="button" id="add" class="btn btn-outline-secondary" style="display: block; margin-bottom: 20px">Add
-    </button>
+    <div class="d-flex">
+        <button type="button" id="token" class="btn btn-outline-warning" style="display: none; margin-bottom: 20px">Get
+            Token
+        </button>
+        <button type="button" id="add" class="btn btn-outline-secondary" style="display: block; margin-bottom: 20px">Add
+        </button>
 
+        <a href="{{ route('positions') }}" type="button" id="position" class="btn btn-info"
+           style="display: block; margin-bottom: 20px; margin-left: 20px">All Position
+        </a>
+    </div>
     <div class="backdrop" id="backdrop">
         <div class="container-form" id="modal_form">
             <div class="col-12 col-md-6">
@@ -104,15 +109,15 @@
     <div class="table-container">
         <table id="myTable" class="table table-striped table-dark custom-table" style="min-height: 625px; margin: 0;">
             <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Photo</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Action</th>
-                </tr>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Action</th>
+            </tr>
             </thead>
             <tbody id="myTableBody">
 

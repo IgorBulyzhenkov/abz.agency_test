@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Back\PositionController;
 use App\Http\Controllers\Back\TokenController;
 use App\Http\Controllers\Back\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/v1')->group(function () {
     Route::get('/users/{id?}',  [ UsersController::class, 'index'])->name('users.api');
     Route::get('/token',        [ TokenController::class, 'index'])->name('token');
+    Route::get('/position',     [ PositionController::class, 'index'])->name('positions.api');
 
     Route::post('/users',       [ UsersController::class, 'store'])->name('users.store');
 });

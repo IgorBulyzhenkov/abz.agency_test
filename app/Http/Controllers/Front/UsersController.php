@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Back\Positions;
-use App\Models\Back\User;
 
 class UsersController extends Controller
 {
